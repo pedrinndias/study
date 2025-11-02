@@ -1,0 +1,42 @@
+/* Estilos Gerais e de Fonte */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Cor de fundo principal escura, equivalente a bg-gray-900 do Tailwind */
+    background-color: #1a202c; 
+    /* Cor de texto padrão clara, equivalente a text-gray-200 do Tailwind */
+    color: #e2e8f0; 
+}
+
+/* Estilo para a seção principal (Hero) */
+.hero-bg {
+    /* Fundo da seção hero um pouco mais claro que o principal, equivalente a bg-gray-800 do Tailwind */
+    background-color: #2d3748; 
+}
+
+/* Regras com seletores hierárquicos para componentes específicos */
+
+/* Estiliza o título dentro de um card de projeto/informação */
+article.project-card h3 {
+    margin-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    /* Cor do título dos cards para um tom claro, equivalente a text-gray-100 do Tailwind */
+    color: #f7fafc; 
+    font-size: 1.15rem;
+}
+
+/* Estiliza um formulário que possa ser adicionado ao rodapé */
+footer.main-footer form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+/* Estiliza os campos de input do formulário no rodapé para o tema escuro */
+footer.main-footer form input {
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #4a5568; /* Equivalente a border-gray-700 */
+    background-color: #2d3748; /* Equivalente a bg-gray-800 */
+    color: #e2e8f0; /* Equivalente a text-gray-200 */
+}

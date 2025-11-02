@@ -1,0 +1,66 @@
+/* Estilos Gerais e de Fonte */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f7f4;
+    color: #333;
+}
+
+/* Estilo para a seção principal (Hero) */
+.hero-bg {
+    background-color: #e2e8f0;
+}
+
+/* Container para o gráfico, garantindo responsividade */
+.chart-container {
+    position: relative; /* position property */
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto; /* box-model: margin */
+    margin-right: auto; /* box-model: margin */
+    height: 300px;
+    max-height: 400px;
+}
+
+/* Ajuste de altura do gráfico para telas maiores */
+@media (min-width: 768px) {
+    .chart-container {
+        height: 350px;
+    }
+}
+
+/* Estilos para abas e filtros ativos */
+.tab-active {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+.filter-btn-active {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* Regras com seletores hierárquicos para componentes específicos */
+
+/* Estiliza o título dentro de um card de projeto */
+article.project-card h3 {
+    margin-top: 0.5rem; /* box-model: margin */
+    padding-bottom: 0.25rem; /* box-model: padding */
+    color: #1f2937;
+    font-size: 1.25rem;
+}
+
+/* Estiliza o formulário dentro do rodapé principal */
+footer.main-footer form {
+    display: flex; /* display property */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem; /* box-model: margin */
+}
+
+/* Estiliza os campos de input do formulário no rodapé */
+footer.main-footer form input {
+    padding: 0.75rem 1.25rem; /* box-model: padding */
+    border: 1px solid #4b5563;
+}

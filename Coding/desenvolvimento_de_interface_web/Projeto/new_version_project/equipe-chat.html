@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat da Equipe | Organize</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+    <header class="header-main bg-gray-800 shadow-lg sticky top-0 z-50">
+        <nav class="main-menu container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">
+                <a href="index.html"><i class="fas fa-sitemap mr-2 text-blue-400"></i>Organize</a>
+            </div>
+            <div id="central-nav-links" class="hidden md:flex items-center space-x-6"></div>
+            <div id="right-nav-action" class="flex items-center"></div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section id="team-details" class="mb-8">
+            <h1 id="team-title" class="text-3xl md:text-4xl font-bold text-white">Carregando equipe...</h1>
+            <p id="team-description" class="text-gray-400 mt-2"></p>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <div class="lg:col-span-3 bg-gray-800 rounded-lg p-6 flex flex-col" style="height: 600px;">
+                <div id="chat-window" class="flex-grow overflow-y-auto mb-4 pr-4">
+                    </div>
+                
+                <div id="chat-area">
+                    <form id="message-form" class="flex items-center gap-4">
+                        <textarea id="message-input" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500 resize-none" rows="1" placeholder="Digite sua mensagem..."></textarea>
+                        <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div id="login-prompt" class="hidden text-center bg-gray-700 p-8 rounded-lg">
+                    <h3 class="text-xl font-bold text-white">Junte-se à discussão!</h3>
+                    <p class="text-gray-400 mt-2 mb-4">Você precisa estar logado para participar do chat e interagir com a equipe.</p>
+                    <a href="login.html" class="bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition duration-300">
+                        Fazer Login ou Criar Conta
+                    </a>
+                </div>
+            </div>
+
+            <aside class="lg:col-span-1 bg-gray-800 rounded-lg p-6">
+                <h2 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Membros da Equipe</h2>
+                <div id="members-list" class="space-y-4">
+                    </div>
+            </aside>
+
+        </div>
+    </main>
+    
+    <script src="auth.js"></script>
+    <script src="equipe-chat.js"></script>
+</body>
+</html>

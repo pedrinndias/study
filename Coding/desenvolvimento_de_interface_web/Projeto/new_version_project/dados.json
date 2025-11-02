@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "titulo": "Equipe de Backend (API Gateway)",
+        "descricao": "Desafio de arquitetura para criar um API Gateway resiliente em Node.js. Precisamos de ajuda com autenticação e rate limiting.",
+        "imagem": "https://appmaster.io/api/_files/PqV7MuNwv89GrZvBd4LNNK/download/",
+        "conteudo": "A Equipe de Backend está focada em resolver um problema real de escalabilidade. O objetivo é construir um API Gateway usando Express.js e talvez algumas bibliotecas como 'express-rate-limit'. A colaboração envolve discussões sobre a melhor abordagem para autenticar rotas e como gerenciar o tráfego de forma eficiente para proteger nossos microsserviços.",
+        "responsavel": "Alex Lima",
+        "data_inicio": "2024-01-10",
+        "tecnologias": ["Node.js", "Express", "JWT", "Redis"],
+        "vagas": 5,
+        "membros": [
+            {"nome": "Alex Lima"},
+            {"nome": "Mariana Silva"}
+        ]
+    },
+    {
+        "id": 2,
+        "titulo": "Equipe Frontend (Refatoração de State)",
+        "descricao": "Nossa aplicação em React está com um gerenciamento de estado complexo. Buscamos colaboradores para refatorar usando Zustand ou Redux Toolkit.",
+        "imagem": "https://blog.b2bstack.com.br/wp-content/uploads/2022/01/front-end-banner.jpg",
+        "conteudo": "Na Equipe de Frontend, o desafio é otimizar a performance da nossa aplicação web. O estado global está caótico e causando re-renderizações desnecessárias. A discussão principal é decidir entre Zustand (pela simplicidade) e Redux Toolkit (pela robustez) e, em seguida, planejar e executar a migração. Perfeito para quem quer aprofundar em state management.",
+        "responsavel": "Bruna Costa",
+        "data_inicio": "2024-02-15",
+        "tecnologias": ["React", "Zustand", "Redux", "TypeScript"],
+        "vagas": 4,
+        "membros": [
+            {"nome": "Bruna Costa"}
+        ]
+    },
+    {
+        "id": 3,
+        "titulo": "Equipe DevOps (Pipeline CI/CD)",
+        "descricao": "Resolver gargalos no nosso pipeline de CI/CD. O objetivo é reduzir o tempo de deploy de 15 para menos de 5 minutos.",
+        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS0PooURoYTCJdatB7dlgRl7un364hNQBlFQ&s",
+        "conteudo": "A Equipe de Infra & DevOps está focada em otimização. Nossos deploys estão lentos e queremos automatizar mais etapas, como testes de integração e análise de segurança. A colaboração envolve trabalhar com GitHub Actions, Docker e scripts para otimizar a construção de imagens e o deployment em um ambiente de staging na nuvem. Se você curte automação, junte-se a nós.",
+        "responsavel": "Carlos Souza",
+        "data_inicio": "2024-03-20",
+        "tecnologias": ["Docker", "GitHub Actions", "AWS", "Shell Script"],
+        "vagas": 3,
+        "membros": [
+            {"nome": "Carlos Souza"},
+            {"nome": "Juliana Pereira"},
+            {"nome": "Ricardo Nunes"}
+        ]
+    }
+]

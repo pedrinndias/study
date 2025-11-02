@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Colaborativa | Organização</title>
+    
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Scripts e Fontes Externas -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+    <header class="header-main bg-white shadow-sm sticky top-0 z-50">
+        <nav class="main-menu container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                <i class="fas fa-sitemap mr-2 text-blue-500"></i>Organize
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#inicio" class="text-gray-600 hover:text-blue-500 transition duration-300">Início</a>
+                <a href="#projetos" class="text-gray-600 hover:text-blue-500 transition duration-300">Projetos</a>
+                <a href="#setores" class="text-gray-600 hover:text-blue-500 transition duration-300">Setores</a>
+                <a href="#depoimentos" class="text-gray-600 hover:text-blue-500 transition duration-300">Depoimentos</a>
+            </div>
+            <div class="flex items-center">
+                 <button class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300 flex items-center">
+                    <i class="fas fa-user-plus mr-2"></i>Participe
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Conectando Pessoas, Impulsionando Projetos.</h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">Somos uma plataforma que une talentos a oportunidades, transformando ideias em realidade através da colaboração.</p>
+                
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center w-48">
+                        <p class="text-4xl font-bold text-blue-500" id="stats-membros">0</p>
+                        <p class="text-gray-500 mt-2">Membros Ativos</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center w-48">
+                        <p class="text-4xl font-bold text-blue-500" id="stats-projetos">0</p>
+                        <p class="text-gray-500 mt-2">Projetos Concluídos</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center w-48">
+                        <p class="text-4xl font-bold text-blue-500" id="stats-setores">0</p>
+                        <p class="text-gray-500 mt-2">Setores Envolvidos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Nossos Projetos em Destaque</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore as iniciativas que estão fazendo a diferença. Filtre por setor para encontrar os projetos que mais lhe interessam.</p>
+                </div>
+
+                <div id="project-filters" class="flex justify-center flex-wrap gap-4 mb-10">
+                    <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition duration-300 filter-btn-active" data-filter="all">Todos</button>
+                    <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-filter="tecnologia">Tecnologia</button>
+                    <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-filter="marketing">Marketing</button>
+                    <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-filter="educacao">Educação</button>
+                </div>
+
+                <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Os artigos de projeto serão inseridos aqui pelo JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="setores" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Explore Nossos Setores</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Cada setor é um ecossistema de talentos e projetos. Navegue pelas abas para conhecer as equipes e as iniciativas de cada área.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="border-b border-gray-200 mb-8">
+                        <nav id="tabs-container" class="-mb-px flex space-x-6" aria-label="Tabs">
+                            <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg tab-active" data-tab="tecnologia">
+                                Tecnologia
+                            </button>
+                            <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="marketing">
+                                Marketing
+                            </button>
+                            <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="educacao">
+                                Educação
+                            </button>
+                        </nav>
+                    </div>
+                    <div id="tabs-content">
+                        <!-- O conteúdo das abas será inserido aqui pelo JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="visualizacao" class="py-20">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Distribuição de Projetos</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Este gráfico ilustra o número de projetos ativos em cada um dos nossos principais setores, oferecendo uma visão clara de onde nossos esforços estão concentrados.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="projectsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">O Que Nossos Membros Dizem</h2>
+                     <p class="text-gray-600 mt-4 max-w-2xl mx-auto">A voz da nossa comunidade é o nosso maior trunfo. Veja o que os colaboradores têm a dizer sobre suas experiências.</p>
+                </div>
+                <div class="relative max-w-3xl mx-auto">
+                    <div id="testimonial-container" class="overflow-hidden">
+                        <!-- O depoimento será inserido aqui pelo JavaScript -->
+                    </div>
+                    <button id="prev-testimonial" class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white p-3 rounded-full shadow-md hover:bg-gray-200 transition">
+                        <i class="fas fa-chevron-left text-gray-600"></i>
+                    </button>
+                    <button id="next-testimonial" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white p-3 rounded-full shadow-md hover:bg-gray-200 transition">
+                        <i class="fas fa-chevron-right text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-2xl font-bold mb-4">Organize</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-400"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <div class="mt-8 max-w-xl mx-auto">
+                <p class="text-gray-300 mb-4">Inscreva-se na nossa newsletter para receber novidades:</p>
+                <form>
+                    <input type="text" placeholder="Seu nome" required class="rounded-full bg-gray-700 text-white placeholder-gray-400 w-full sm:w-auto mb-2 sm:mb-0">
+                    <input type="email" placeholder="seu-email@exemplo.com" required class="rounded-full bg-gray-700 text-white placeholder-gray-400 w-full sm:w-auto mb-2 sm:mb-0">
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300 w-full sm:w-auto">Inscrever</button>
+                </form>
+            </div>
+
+            <p class="text-gray-400 text-sm mt-10">&copy; 2025 Organize. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const projectsData = [
+                {
+                    title: 'Plataforma de E-learning',
+                    category: 'educacao',
+                    description: 'Desenvolvimento de uma plataforma interativa para cursos online, focada em acessibilidade.',
+                    status: 'Em Andamento',
+                    progress: 75,
+                    image: 'https://picsum.photos/seed/edu1/600/400'
+                },
+                {
+                    title: 'Análise de Dados de Mercado',
+                    category: 'marketing',
+                    description: 'Coleta e análise de dados para identificar novas tendências de mercado para startups.',
+                    status: 'Concluído',
+                    progress: 100,
+                    image: 'https://picsum.photos/seed/mkt1/600/400'
+                },
+                {
+                    title: 'Aplicativo de Gestão Ágil',
+                    category: 'tecnologia',
+                    description: 'Criação de um app mobile para gerenciamento de tarefas e equipes usando a metodologia Scrum.',
+                    status: 'Em Andamento',
+                    progress: 60,
+                    image: 'https://picsum.photos/seed/tech1/600/400'
+                },
+                {
+                    title: 'Campanha de Conscientização',
+                    category: 'marketing',
+                    description: 'Lançamento de uma campanha digital para promover a sustentabilidade no setor de tecnologia.',
+                    status: 'Em Andamento',
+                    progress: 45,
+                    image: 'https://picsum.photos/seed/mkt2/600/400'
+                },
+                {
+                    title: 'Sistema de Código Aberto',
+                    category: 'tecnologia',
+                    description: 'Contribuição para um projeto open-source de reconhecimento de imagem com IA.',
+                    status: 'Concluído',
+                    progress: 100,
+                    image: 'https://picsum.photos/seed/tech2/600/400'
+                },
+                {
+                    title: 'Workshop de Programação',
+                    category: 'educacao',
+                    description: 'Organização de workshops gratuitos de introdução à programação para jovens.',
+                    status: 'Planejamento',
+                    progress: 20,
+                    image: 'https://picsum.photos/seed/edu2/600/400'
+                }
+            ];
+
+            const tabsData = {
+                tecnologia: {
+                    icon: 'fa-laptop-code',
+                    description: 'O setor de Tecnologia é o motor da nossa inovação. Desenvolvemos soluções de ponta, desde aplicativos móveis a sistemas de inteligência artificial, sempre buscando a excelência técnica e a resolução de problemas complexos.',
+                    members: ['Ana Beatriz', 'Carlos Silva', 'Mariana Costa'],
+                    projects: ['Aplicativo de Gestão Ágil', 'Sistema de Código Aberto']
+                },
+                marketing: {
+                    icon: 'fa-bullhorn',
+                    description: 'Nossa equipe de Marketing cria as pontes entre nossas soluções e o mundo. Somos especialistas em estratégias digitais, análise de dados e criação de campanhas que geram impacto e engajamento.',
+                    members: ['João Pedro', 'Fernanda Lima', 'Ricardo Alves'],
+                    projects: ['Análise de Dados de Mercado', 'Campanha de Conscientização']
+                },
+                educacao: {
+                    icon: 'fa-graduation-cap',
+                    description: 'O pilar da Educação se dedica a capacitar e compartilhar conhecimento. Criamos plataformas de e-learning, workshops e materiais educativos para democratizar o acesso à informação e à tecnologia.',
+                    members: ['Sofia Martins', 'Lucas Pereira', 'Gabriela Santos'],
+                    projects: ['Plataforma de E-learning', 'Workshop de Programação']
+                }
+            };
+
+            const testimonialsData = [
+                 {
+                    name: 'Carlos Silva',
+                    role: 'Desenvolvedor Backend',
+                    testimonial: '"Participar do projeto de gestão ágil foi uma experiência incrível. A colaboração e o aprendizado constante são os pontos fortes desta organização."',
+                    image: 'https://picsum.photos/seed/carlos/100/100'
+                },
+                {
+                    name: 'Fernanda Lima',
+                    role: 'Estrategista de Marketing',
+                    testimonial: '"A liberdade criativa que temos aqui é fantástica. Pude aplicar novas estratégias na campanha de sustentabilidade e os resultados foram muito positivos."',
+                    image: 'https://picsum.photos/seed/fernanda/100/100'
+                },
+                {
+                    name: 'Sofia Martins',
+                    role: 'Designer Instrucional',
+                    testimonial: '"Ver o impacto da plataforma de e-learning na vida dos estudantes é extremamente gratificante. É um projeto com um propósito real e transformador."',
+                    image: 'https://picsum.photos/seed/sofia/100/100'
+                }
+            ];
+
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            const statsMembros = document.getElementById('stats-membros');
+            const statsProjetos = document.getElementById('stats-projetos');
+            const statsSetores = document.getElementById('stats-setores');
+            animateValue(statsMembros, 0, 150, 2000);
+            animateValue(statsProjetos, 0, 42, 2000);
+            animateValue(statsSetores, 0, 3, 2000);
+
+            const projectGrid = document.getElementById('project-grid');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            function renderProjects(filter = 'all') {
+                projectGrid.innerHTML = '';
+                const filteredProjects = filter === 'all' ? projectsData : projectsData.filter(p => p.category === filter);
+
+                filteredProjects.forEach(project => {
+                    const projectCard = `
+                        <article class="project-card bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-category="${project.category}">
+                            <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <span class="text-sm font-semibold ${project.status === 'Concluído' ? 'text-green-600' : 'text-blue-600'}">${project.status}</span>
+                                <h3 class="font-bold text-gray-800">${project.title}</h3>
+                                <p class="text-gray-600 mt-2 mb-4 h-20">${project.description}</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-500 h-2.5 rounded-full" style="width: ${project.progress}%"></div>
+                                </div>
+                                <p class="text-right text-sm text-gray-500 mt-1">${project.progress}%</p>
+                            </div>
+                        </article>
+                    `;
+                    projectGrid.innerHTML += projectCard;
+                });
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('filter-btn-active');
+                        btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                    });
+                    button.classList.add('filter-btn-active');
+                    button.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                    renderProjects(button.dataset.filter);
+                });
+            });
+
+            const tabsContainer = document.getElementById('tabs-container');
+            const tabsContent = document.getElementById('tabs-content');
+
+            function renderTabContent(tabKey) {
+                const data = tabsData[tabKey];
+                tabsContent.innerHTML = `
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/3 text-center">
+                            <i class="fas ${data.icon} text-6xl text-blue-500 mb-4"></i>
+                            <h3 class="text-2xl font-bold">${tabKey.charAt(0).toUpperCase() + tabKey.slice(1)}</h3>
+                        </div>
+                        <div class="md:w-2/3">
+                            <p class="text-gray-600 mb-4">${data.description}</p>
+                            <h4 class="font-bold mb-2">Membros Chave:</h4>
+                            <p class="text-gray-600 mb-4">${data.members.join(', ')}</p>
+                            <h4 class="font-bold mb-2">Projetos Principais:</h4>
+                            <p class="text-gray-600">${data.projects.join(', ')}</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            tabsContainer.addEventListener('click', (e) => {
+                if (e.target.matches('.tab-btn')) {
+                    document.querySelectorAll('.tab-btn').forEach(btn => {
+                        btn.classList.remove('tab-active');
+                        btn.classList.add('text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                    });
+                    e.target.classList.add('tab-active');
+                    e.target.classList.remove('text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                    renderTabContent(e.target.dataset.tab);
+                }
+            });
+
+            const testimonialContainer = document.getElementById('testimonial-container');
+            let currentTestimonial = 0;
+
+            function renderTestimonials() {
+                testimonialContainer.innerHTML = '';
+                const testimonial = testimonialsData[currentTestimonial];
+                const testimonialCard = `
+                    <div class="text-center p-8 bg-white rounded-lg shadow-lg">
+                        <img src="${testimonial.image}" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-blue-200">
+                        <p class="text-gray-600 italic mb-4">"${testimonial.testimonial}"</p>
+                        <p class="font-bold text-gray-800">${testimonial.name}</p>
+                        <p class="text-sm text-gray-500">${testimonial.role}</p>
+                    </div>
+                `;
+                testimonialContainer.innerHTML = testimonialCard;
+            }
+
+            document.getElementById('next-testimonial').addEventListener('click', () => {
+                currentTestimonial = (currentTestimonial + 1) % testimonialsData.length;
+                renderTestimonials();
+            });
+
+            document.getElementById('prev-testimonial').addEventListener('click', () => {
+                currentTestimonial = (currentTestimonial - 1 + testimonialsData.length) % testimonialsData.length;
+                renderTestimonials();
+            });
+
+            const ctx = document.getElementById('projectsChart').getContext('2d');
+            const projectsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Tecnologia', 'Marketing', 'Educação'],
+                    datasets: [{
+                        label: 'Nº de Projetos',
+                        data: [
+                            projectsData.filter(p => p.category === 'tecnologia').length,
+                            projectsData.filter(p => p.category === 'marketing').length,
+                            projectsData.filter(p => p.category === 'educacao').length
+                        ],
+                        backgroundColor: [
+                            'rgba(34, 197, 94, 0.6)',
+                            'rgba(239, 68, 68, 0.6)',
+                            'rgba(59, 130, 246, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(34, 197, 94, 1)',
+                            'rgba(239, 68, 68, 1)',
+                            'rgba(59, 130, 246, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.raw} projetos`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            renderProjects();
+            renderTabContent('tecnologia');
+            renderTestimonials();
+        });
+    </script>
+</body>
+</html>
