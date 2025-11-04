@@ -22,7 +22,7 @@
 ## Questão 2
 
 
-Escreva a integral que fornece a área da superfície do sólido gerado pela rotação da curva $y = x^2$ para os valores de $x = 1$ até $x = 2$ em torno do **eixo y**. [cite: 441, 455]
+Escreva a integral que fornece a área da superfície do sólido gerado pela rotação da curva $y = x^2$ para os valores de $x = 1$ até $x = 2$ em torno do **eixo y**.
 
 
 ## Questão 3
