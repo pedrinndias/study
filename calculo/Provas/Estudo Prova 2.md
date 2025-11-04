@@ -1,0 +1,6 @@
+[[Prova Gemini 1]]
+[[Faculdade/2º Período/Cálculo 2/Provas/Estudo prova 2/Prova Gemini 2/Prova Gemini 2|Prova Gemini 2]]
+[[Prova Gemini 3]]
+[[Faculdade/2º Período/Cálculo 2/Provas/Estudo prova 2/Prova Gemini 1/Gabarito|Gabarito]]
+[[Faculdade/2º Período/Cálculo 2/Provas/Estudo prova 2/Prova Gemini 3/Gabarito|Gabarito]]
+[[Faculdade/2º Período/Cálculo 2/Provas/Estudo prova 2/Prova Gemini 2/Gabarito|Gabarito]]
