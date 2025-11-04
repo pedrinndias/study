@@ -23,7 +23,7 @@
 
 ## Questão 2
 
-Escreva a integral que fornece o **comprimento de arco** da curva $y = e^x$ para os valores de $x = 1$ até $x = 3$. [cite: 70, 191]
+Escreva a integral que fornece o **comprimento de arco** da curva $y = e^x$ para os valores de $x = 1$ até $x = 3$.
 
 
 ## Questão 3
