@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "categoria": "Inteligência Artificial",
+        "titulo": "O Avanço dos Modelos de Linguagem e o Impacto no Desenvolvimento",
+        "resumo": "Como a IA Generativa está a transformar a forma como escrevemos código, desde a autocompletação inteligente até à geração de testes unitários.",
+        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVFR_s-LjFVZjXzdLH8JHSQhSU2vouSp4RBw&s",
+        "conteudo": "A IA Generativa está revolucionando o desenvolvimento de software. Ferramentas como o GitHub Copilot e o ChatGPT não estão apenas acelerando o processo de codificação, mas também mudando a forma como os desenvolvedores abordam problemas. A capacidade de gerar blocos de código, explicar algoritmos complexos e até mesmo criar testes unitários completos está permitindo que equipes se concentrem mais na arquitetura e na lógica de negócios de alto nível."
+    },
+    {
+        "id": 2,
+        "categoria": "Frontend",
+        "titulo": "WebAssembly (Wasm): O Futuro da Performance na Web?",
+        "resumo": "Entenda como o WebAssembly permite executar código de alto desempenho (C++, Rust) diretamente no navegador, abrindo portas para aplicações complexas.",
+        "imagem": "https://miro.medium.com/1*SxqksKunrvoYJeUCexgcFw.png",
+        "conteudo": "O WebAssembly (Wasm) é um formato de instrução binária para uma máquina virtual baseada em pilha. Ele é projetado como um alvo de compilação portátil para linguagens de alto nível como C, C++ e Rust, permitindo que aplicações que exigem performance quase nativa sejam executadas na web. Isso abre portas para jogos 3D complexos, edição de vídeo no navegador e ferramentas de análise de dados que antes eram impossíveis de rodar de forma eficiente em JavaScript."
+    },
+    {
+        "id": 3,
+        "categoria": "Core Tech",
+        "titulo": "Novas Features do ECMAScript: O Que Esperar para o JavaScript",
+        "resumo": "Explore as propostas que estão a moldar o futuro do JavaScript, incluindo melhorias de sintaxe, novos operadores e APIs para o dia a dia.",
+        
+        "imagem": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+
+        "conteudo": "O JavaScript está em constante evolução, e o comitê TC39 continua a aprovar novas propostas que melhoram a linguagem. Entre as novidades mais esperadas estão o 'Pattern Matching', novos métodos para `Date` (Temporal API), e o operador 'Pipe' (|>) que promete simplificar a composição de funções. Essas adições visam tornar o código mais legível, declarativo e menos propenso a erros, facilitando o dia a dia dos desenvolvedores."
+    }
+]
