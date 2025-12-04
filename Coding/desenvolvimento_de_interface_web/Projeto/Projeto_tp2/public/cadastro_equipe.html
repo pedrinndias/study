@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Nova Equipe | Organize</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+    <header class="header-main bg-gray-800 shadow-lg sticky top-0 z-50">
+        <nav class="main-menu container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">
+                <a href="index.html"><i class="fas fa-sitemap mr-2 text-blue-400"></i>Organize</a>
+            </div>
+            <div id="central-nav-links" class="hidden md:flex items-center space-x-6"></div>
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none mr-4">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <div id="right-nav-action" class="flex items-center"></div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg shadow-md">
+            <h1 class="text-3xl font-bold text-white mb-6">Cadastrar Nova Equipe</h1>
+            <p class="text-gray-400 mb-8">Preencha os dados abaixo para criar uma nova equipe de colaboração.</p>
+
+            <form id="form-cadastro-equipe">
+                <div class="mb-4">
+                    <label for="titulo" class="block text-gray-300 mb-2">Título da Equipe*</label>
+                    <input type="text" id="titulo" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="descricao" class="block text-gray-300 mb-2">Descrição Curta (para o card)*</label>
+                    <input type="text" id="descricao" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="conteudo" class="block text-gray-300 mb-2">Descrição Completa (para a página de detalhes)*</label>
+                    <textarea id="conteudo" rows="4" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500" required></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label for="imagem" class="block text-gray-300 mb-2">URL da Imagem de Capa*</label>
+                    <input type="url" id="imagem" placeholder="https://..." class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500" required>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="mb-4">
+                        <label for="responsavel" class="block text-gray-300 mb-2">Responsável (Seu nome)*</label>
+                        <input type="text" id="responsavel" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                     <div class="mb-4">
+                        <label for="vagas" class="block text-gray-300 mb-2">Nº de Vagas*</label>
+                        <input type="number" id="vagas" value="5" min="1" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="tecnologias" class="block text-gray-300 mb-2">Tecnologias (separadas por vírgula)*</label>
+                    <input type="text" id="tecnologias" placeholder="Node.js, React, Docker..." class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500" required>
+                </div>
+
+                <button type="submit" class="w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition duration-300">
+                    Criar Equipe
+                </button>
+            </form>
+            
+            <div id="feedback-message" class="text-center mt-6"></div>
+        </div>
+    </main>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/cadastro-equipe.js"></script>
+</body>
+</html>

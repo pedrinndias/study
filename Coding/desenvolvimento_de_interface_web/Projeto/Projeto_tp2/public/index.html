@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organize | Hub de Colaboração para DEVs</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chart.js para a Visualização Avançada -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="antialiased bg-gray-900 text-gray-100">
+
+    <!-- HEADER (Gerenciado pelo auth.js) -->
+    <header class="header-main bg-gray-800 shadow-lg sticky top-0 z-50">
+        <nav class="main-menu container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">
+                <a href="index.html"><i class="fas fa-sitemap mr-2 text-blue-400"></i>Organize</a>
+            </div>
+            <div id="central-nav-links" class="hidden md:flex items-center space-x-6"></div>
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none mr-4">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <div id="right-nav-action" class="flex items-center"></div>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO 1: CARROSSEL DE DESTAQUES (NOTÍCIAS) -->
+    <section id="news-section" class="bg-gray-800/50 py-10 border-b border-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-white"><i class="fas fa-bolt text-yellow-400 mr-2"></i>Últimas Novidades</h2>
+                    <p class="text-gray-400 text-sm">Arraste para o lado para ver mais</p>
+                </div>
+                <!-- Dica visual de scroll -->
+                <div class="hidden md:block text-gray-500 text-sm">
+                    <i class="fas fa-arrows-alt-h mr-2"></i>Scroll Horizontal
+                </div>
+            </div>
+            
+            <!-- Container do Scroll Inteligente (Horizontal) -->
+            <div id="news-carousel-container" class="relative w-full overflow-hidden pb-4">
+                <div id="news-cards-scroller" class="flex gap-6">
+                    <!-- Preenchido via app.js -->
+                    <p class="text-gray-500">Carregando notícias...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- COLUNA PRINCIPAL (ESQUERDA) -->
+        <main class="lg:col-span-2 space-y-8">
+            
+            <!-- HERO -->
+            <section class="hero-bg rounded-xl p-8 md:p-12 text-center md:text-left relative overflow-hidden shadow-lg border border-gray-700">
+                <div class="relative z-10">
+                    <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">Conecte-se. Code. Evolua.</h1>
+                    <p class="text-gray-300 text-lg max-w-xl mb-6">O hub onde desenvolvedores encontram equipes para transformar ideias em código real.</p>
+                    <a href="cadastro_equipe.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg">
+                        Criar minha Equipe
+                    </a>
+                </div>
+                <!-- Efeito de fundo -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+            </section>
+
+            <!-- SEÇÃO 2: PESQUISA E LISTAGEM DE EQUIPES -->
+            <section id="equipes-area">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+                    <h2 class="text-2xl font-bold text-white">Equipes Ativas</h2>
+                    
+                    <!-- BARRA DE PESQUISA (Requisito TP2) -->
+                    <div class="relative w-full md:w-auto flex-grow max-w-md">
+                        <input type="text" id="search-input" 
+                               class="w-full bg-gray-800 border border-gray-600 text-white rounded-full py-2 pl-10 pr-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                               placeholder="Buscar por nome, stack (ex: React)...">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+                    </div>
+                </div>
+
+                <div id="equipes-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Preenchido via app.js -->
+                    <div class="col-span-2 text-center py-10">
+                        <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+                        <p class="text-gray-500 mt-2">Buscando equipes...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- COLUNA LATERAL (DIREITA) -->
+        <aside class="lg:col-span-1 space-y-8">
+            
+            <!-- SEÇÃO 3: VISUALIZAÇÃO AVANÇADA (GRÁFICO NA HOME) -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700">
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                    <i class="fas fa-chart-pie text-blue-400 mr-2"></i>Market Share
+                </h3>
+                <p class="text-xs text-gray-400 mb-4">Tecnologias mais procuradas nas equipes ativas.</p>
+                <div class="relative h-64 w-full">
+                    <canvas id="homeChart"></canvas>
+                </div>
+            </div>
+
+            <!-- CARROSSEL VERTICAL (SIDEBAR) -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Destaques da Semana</h3>
+                <div id="equipes-carousel-container" class="relative overflow-hidden h-[600px] pr-2">
+                    <div id="info-cards" class="space-y-4 pb-4">
+                        <!-- Preenchido via app.js (Loop Vertical) -->
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+    <footer class="main-footer bg-gray-800 text-white py-12 mt-8 border-t border-gray-700">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin text-xl"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2025 Organize. TP2 - Desenvolvimento de Interfaces Web.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Script Específico para o Gráfico da Home -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const ctx = document.getElementById('homeChart');
+            if(!ctx) return;
+
+            try {
+                // Busca dados reais para o gráfico
+                const response = await fetch('http://localhost:3000/equipes');
+                const equipes = await response.json();
+
+                // Conta tecnologias
+                const techCount = {};
+                equipes.forEach(eq => {
+                    if(eq.tecnologias) {
+                        eq.tecnologias.forEach(tech => {
+                            techCount[tech] = (techCount[tech] || 0) + 1;
+                        });
+                    }
+                });
+
+                // Prepara dados para o Chart.js
+                const labels = Object.keys(techCount).slice(0, 5); // Top 5
+                const data = Object.values(techCount).slice(0, 5);
+
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: data,
+                            backgroundColor: [
+                                '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { color: '#9ca3af', boxWidth: 12 }
+                            }
+                        }
+                    }
+                });
+            } catch (e) {
+                console.error("Erro gráfico home:", e);
+                ctx.parentElement.innerHTML = "<p class='text-xs text-red-400'>Dados indisponíveis</p>";
+            }
+        });
+    </script>
+</body>
+</html>

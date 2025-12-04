@@ -1,0 +1,177 @@
+{
+  "usuarios": [
+    {
+      "id": "u1",
+      "nome": "Pedro Dias Soares",
+      "email": "pedro3soares@gmail.com",
+      "senha": "123",
+      "admin": true,
+      "avatar": "https://ui-avatars.com/api/?name=Pedro+Soares&background=0D8ABC&color=fff",
+      "cargo": "Administrador & Fullstack Dev",
+      "bio": "Estudante de Ciência de Dados e IA. Criador do Organize, focado em criar soluções que conectam desenvolvedores e facilitam o aprendizado colaborativo.",
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com",
+      "data_cadastro": "2025-01-01T10:00:00.000Z"
+    },
+    {
+      "id": "u2",
+      "nome": "Visitante",
+      "email": "visitante@teste.com",
+      "senha": "123",
+      "admin": false,
+      "avatar": "https://ui-avatars.com/api/?name=Visitante&background=random",
+      "cargo": "Membro da Comunidade",
+      "bio": "Entusiasta de tecnologia explorando novas oportunidades de colaboração no Organize.",
+      "github": "",
+      "linkedin": "",
+      "data_cadastro": "2025-01-02T10:00:00.000Z"
+    }
+  ],
+  "favoritos": [
+    {
+      "id": "2904",
+      "usuarioId": "u1",
+      "equipeId": "1"
+    }
+  ],
+  "equipes": [
+    {
+      "id": "github-demo",
+      "titulo": "Equipe Demo: Integração GitHub",
+      "descricao": "Uma equipe de demonstração para a nova feature de feed de commits do GitHub.",
+      "imagem": "https://netolink.com/wp-content/uploads/2024/12/GitHub.png",
+      "conteudo": "Esta equipe foi criada para demonstrar a integração em tempo real (via API REST) com um repositório público do GitHub. A barra lateral exibe os 5 commits mais recentes do repositório 'microsoft/vscode'. O objetivo é permitir que os membros acompanhem o desenvolvimento do código diretamente pelo portal Organize, facilitando a visibilidade das atualizações.",
+      "responsavel": "Pedro Dias Soares",
+      "data_inicio": "2025-11-14",
+      "tecnologias": [
+        "GitHub API",
+        "JavaScript",
+        "Fetch"
+      ],
+      "vagas": 3,
+      "membros": [
+        {
+          "nome": "Pedro Dias Soares"
+        }
+      ],
+      "github_repo": "microsoft/vscode"
+    },
+    {
+      "id": "1",
+      "titulo": "Equipe de Backend (API Gateway)",
+      "descricao": "Desafio de arquitetura para criar um API Gateway resiliente em Node.js. Precisamos de ajuda com autenticação e rate limiting.",
+      "imagem": "https://appmaster.io/api/_files/PqV7MuNwv89GrZvBd4LNNK/download/",
+      "conteudo": "A Equipe de Backend está focada em resolver um problema real de escalabilidade. Estamos migrando um monólito para microsserviços e precisamos configurar um API Gateway robusto usando Express e Redis para Rate Limiting. O projeto envolve também a implementação de autenticação centralizada via JWT e monitoramento de rotas.",
+      "responsavel": "Alex Lima",
+      "data_inicio": "2024-01-10",
+      "tecnologias": [
+        "Node.js",
+        "Express",
+        "JWT",
+        "Redis"
+      ],
+      "vagas": 5,
+      "membros": [
+        {
+          "nome": "Alex Lima"
+        },
+        {
+          "nome": "Mariana Silva"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "titulo": "Equipe Frontend (Refatoração de State)",
+      "descricao": "Nossa aplicação em React está com um gerenciamento de estado complexo. Buscamos colaboradores para refatorar usando Zustand ou Redux Toolkit.",
+      "imagem": "https://blog.b2bstack.com.br/wp-content/uploads/2022/01/front-end-banner.jpg",
+      "conteudo": "Na Equipe de Frontend, o desafio é otimizar a performance da nossa aplicação web. O estado global está caótico e causando re-renderizações desnecessárias. A discussão principal é decidir entre Zustand (pela simplicidade) e Redux Toolkit (pela robustez) e, em seguida, planejar e executar a migração. Perfeito para quem quer aprofundar em state management.",
+      "responsavel": "Bruna Costa",
+      "data_inicio": "2024-02-15",
+      "tecnologias": [
+        "React",
+        "Zustand",
+        "Redux",
+        "TypeScript"
+      ],
+      "vagas": 4,
+      "membros": [
+        {
+          "nome": "Bruna Costa"
+        }
+      ]
+    },
+    {
+      "id": "02fa",
+      "titulo": "Equipe de Teste (QA)",
+      "descricao": "Nossa nova equipe de QA focada em automação de testes de API.",
+      "imagem": "https://apibrasil.blog/wp-content/uploads/2023/11/Postman-logo.webp",
+      "conteudo": "Esta equipe dedica-se a garantir a qualidade do software através de testes rigorosos. O foco atual é a validação de rotas da API utilizando Postman para testes manuais e scripts de automação para testes de regressão. Buscamos garantir que todos os endpoints REST respondam corretamente sob diversas condições de carga.",
+      "responsavel": "Pedro",
+      "data_inicio": "2024-10-25",
+      "tecnologias": [
+        "Testes",
+        "API",
+        "Postman"
+      ],
+      "vagas": 2,
+      "membros": [
+        {
+          "nome": "Pedro"
+        }
+      ]
+    }
+  ],
+  "noticias": [
+    {
+      "id": "tutorial-fixo",
+      "titulo": "Bem-vindo! Como Usar o Portal Organize",
+      "categoria": "Tutorial",
+      "resumo": "Um guia rápido para você aprender a criar contas, entrar em equipes, publicar notícias e aproveitar ao máximo nossa plataforma.",
+      "conteudo": "<h1>Bem-vindo ao Organize!</h1><p>Este portal foi feito para você colaborar em equipes e se manter atualizado. Aqui está um guia rápido:</p><h2>1. Login e Cadastro</h2><p>Para interagir com as equipes e publicar conteúdo, você precisa de uma conta. Vá até a página <strong>'Login'</strong> (ou 'Participe') e crie sua conta. O processo é rápido, pedimos apenas seu nome, email e senha.</p><h2>2. Explorando Equipes</h2><p>Na página <strong>'Explorar Equipes'</strong>, você vê todas as equipes ativas. Você pode entrar em qualquer uma para ver o chat e os membros.</p><h2>3. Criando sua Própria Equipe</h2><p>No seu <strong>'Dashboard'</strong> (ou no menu superior, se estiver logado), clique em <strong>'Nova Equipe'</strong>. Preencha o formulário com os detalhes do seu projeto, as tecnologias usadas e o número de vagas. Você se tornará o 'Responsável' pela equipe.</p><h2>4. Publicando Notícias</h2><p>Quer compartilhar uma novidade? No menu, clique em <strong>'Nova Notícia'</strong>. Escreva seu artigo, defina uma categoria e uma imagem. Sua notícia aparecerá na página inicial para todos verem.</p><h2>5. Seu Dashboard</h2><p>Esta é sua central de controle. Aqui você pode ver as equipes que criou e as notícias que publicou, com opções fáceis para <strong>Editar</strong> ou <strong>Apagar</strong> seu conteúdo.</p>",
+      "imagem": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+      "author": "Equipe Organize",
+      "data_publicacao": "2099-12-31T00:00:00.000Z"
+    },
+    {
+      "id": "1",
+      "categoria": "Inteligência Artificial",
+      "titulo": "O Avanço dos Modelos de Linguagem e o Impacto no Desenvolvimento",
+      "resumo": "Como a IA Generativa está a transformar a forma como escrevemos código, desde a autocompletação inteligente até à geração de testes unitários.",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVFR_s-LjFVZjXzdLH8JHSQhSU2vouSp4RBw&s",
+      "conteudo": "A IA Generativa está revolucionando o desenvolvimento de software. Ferramentas como o GitHub Copilot e o ChatGPT não estão apenas acelerando o processo de codificação, mas também mudando a forma como os desenvolvedores abordam problemas. A capacidade de gerar blocos de código, explicar algoritmos complexos e até mesmo criar testes unitários completos está permitindo que equipes se concentrem mais na arquitetura e na lógica de negócios de alto nível, deixando as tarefas repetitivas para a máquina.",
+      "author": "Pedro Dias Soares",
+      "data_publicacao": "2025-11-20T10:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "categoria": "Frontend",
+      "titulo": "WebAssembly (Wasm): O Futuro da Performance na Web?",
+      "resumo": "Entenda como o WebAssembly permite executar código de alto desempenho (C++, Rust) diretamente no navegador, abrindo portas para aplicações complexas.",
+      "imagem": "https://miro.medium.com/1*SxqksKunrvoYJeUCexgcFw.png",
+      "conteudo": "O WebAssembly (Wasm) é um formato de instrução binária para uma máquina virtual baseada em pilha. Ele é projetado como um alvo de compilação portátil para linguagens de alto nível como C, C++ e Rust, permitindo que aplicações que exigem performance quase nativa sejam executadas na web. Isso abre portas para jogos 3D complexos, edição de vídeo no navegador e ferramentas de análise de dados que antes eram impossíveis de rodar de forma eficiente em JavaScript puro.",
+      "author": "Bruna Costa",
+      "data_publicacao": "2025-11-18T10:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "categoria": "Core Tech",
+      "titulo": "Novas Features do ECMAScript: O Que Esperar para o JavaScript",
+      "resumo": "Explore as propostas que estão a moldar o futuro do JavaScript, incluindo melhorias de sintaxe, novos operadores e APIs para o dia a dia.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+      "conteudo": "O JavaScript está em constante evolução, e o comitê TC39 continua a aprovar novas propostas que melhoram a linguagem. Entre as novidades mais esperadas estão o 'Pattern Matching', novos métodos para `Date` (Temporal API), e o operador 'Pipe' (|>) que promete simplificar a composição de funções. Essas adições visam tornar o código mais legível, declarativo e menos propenso a erros, facilitando o dia a dia dos desenvolvedores modernos.",
+      "author": "Alex Lima",
+      "data_publicacao": "2025-11-15T10:00:00.000Z"
+    },
+    {
+      "id": "1fa1",
+      "titulo": "Teste de nova noticia estatística",
+      "categoria": "Estatistica",
+      "resumo": "Noticia teste para implementação da estatisticas e gráficos no dashboard.",
+      "conteudo": "Esta notícia serve para popular o banco de dados e testar se o gráfico de 'Notícias por Categoria' está funcionando corretamente na página de estatísticas, garantindo que o Chart.js consiga ler os dados dinamicamente.",
+      "imagem": "https://i0.wp.com/www.cienciaedados.com/wp-content/uploads/2021/03/8-Conceitos-Estatisticos-Fundamentais-Para-Data-Science.png?fit=850%2C478&ssl=1",
+      "author": "Pedro Dias Soares",
+      "data_publicacao": "2025-11-15T15:22:26.134Z"
+    }
+  ]
+}

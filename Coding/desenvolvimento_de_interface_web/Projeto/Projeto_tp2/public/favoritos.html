@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Favoritos | Organize</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body id="favoritos-page" class="antialiased bg-gray-900">
+
+    <header class="header-main bg-gray-800 shadow-lg sticky top-0 z-50">
+        <nav class="main-menu container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">
+                <a href="index.html"><i class="fas fa-sitemap mr-2 text-blue-400"></i>Organize</a>
+            </div>
+            <div id="central-nav-links" class="hidden md:flex items-center space-x-6"></div>
+            <div id="right-nav-action" class="flex items-center"></div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="mb-10">
+            <h1 class="text-4xl font-bold text-white"><i class="fas fa-heart text-red-500 mr-3"></i>Meus Favoritos</h1>
+            <p class="text-gray-400 mt-2">Equipes que você marcou como interesse.</p>
+        </div>
+
+        <div id="favoritos-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <p class="text-gray-500">Carregando favoritos...</p>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script>
+        // Script simples embutido para carregar apenas os favoritos
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('favoritos-list-container');
+            const currentUser = JSON.parse(sessionStorage.getItem('organize_currentUser'));
+            const API_URL = 'http://localhost:3000';
+
+            if (!currentUser) return; // auth.js já redireciona
+
+            try {
+                // 1. Pega os IDs dos favoritos
+                const favResponse = await fetch(`${API_URL}/favoritos?usuarioId=${currentUser.id}`);
+                const favoritos = await favResponse.json();
+
+                if (favoritos.length === 0) {
+                    container.innerHTML = '<p class="text-gray-400 text-lg">Você ainda não favoritou nenhuma equipe.</p>';
+                    return;
+                }
+
+                container.innerHTML = '';
+
+                // 2. Para cada favorito, busca os dados da equipe
+                for (const fav of favoritos) {
+                    const equipeResp = await fetch(`${API_URL}/equipes/${fav.equipeId}`);
+                    if(equipeResp.ok) {
+                        const card = await equipeResp.json();
+                        // Renderiza Card (Simplificado)
+                        container.innerHTML += `
+                            <article class="bg-gray-800 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300">
+                                <img src="${card.imagem}" class="w-full h-40 object-cover">
+                                <div class="p-6">
+                                    <h3 class="font-bold text-white text-xl mb-2">${card.titulo}</h3>
+                                    <p class="text-gray-400 text-sm mb-4 line-clamp-2">${card.descricao}</p>
+                                    <a href="equipe-chat.html?id=${card.id}" class="block w-full text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Ver Detalhes</a>
+                                </div>
+                            </article>
+                        `;
+                    }
+                }
+            } catch (error) {
+                console.error(error);
+                container.innerHTML = '<p class="text-red-400">Erro ao carregar favoritos.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
