@@ -1,139 +1,67 @@
-Organize - Hub de Colaboração para Desenvolvedores
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=21671952)
 
-Este projeto é o Trabalho Prático 2 (TP2) da disciplina de Desenvolvimento de Interfaces Web (DIW), do curso de Ciência de Dados e Inteligência Artificial da PUC Minas.
+# Trabalho Prático 07 - Semanas 13 e 14
 
-O Organize é uma aplicação web que simula um ambiente de comunidade (Hub) onde desenvolvedores podem encontrar equipas, partilhar notícias e colaborar em projetos de software.
+A partir dos dados cadastrados na etapa anterior, vamos trabalhar formas de apresentação que representem de forma clara e interativa as informações do seu projeto. Você poderá usar gráficos (barra, linha, pizza), mapas, calendários ou outras formas de visualização. Seu desafio é entregar uma página Web que organize, processe e exiba os dados de forma compreensível e esteticamente agradável.
 
-🚀 Funcionalidades
+Com base nos tipos de projetos escohidos, você deve propor **visualizações que estimulem a interpretação, agrupamento e exibição criativa dos dados**, trabalhando tanto a lógica quanto o design da aplicação.
 
-O projeto foi desenvolvido como uma aplicação dinâmica com persistência de dados via API REST (JSON Server).
+Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fullcalendar.io/), [Chart.js](https://www.chartjs.org/), [Mapbox](https://docs.mapbox.com/api/), para citar algumas.
 
-Autenticação e Perfis:
+## Informações do trabalho
 
-Login e Registo de utilizadores com validação.
+- **Nome:** Pedro Dias Soares
+- **Matricula:** 879672
+- **Proposta de projeto escolhida:** Organizações e Equipes
 
-Criação automática de Perfil Público (Avatar, Bio, Redes Sociais).
+---
 
-Gestão de Sessão segura (sessionStorage).
+## Breve descrição sobre seu projeto (Base - CRUDs)
 
-Gestão de Conteúdo (CRUD):
+O projeto é um hub de colaboração para desenvolvedores chamado **"Organize"**. Ele funciona como um portal onde usuários podem se cadastrar, criar equipes de desenvolvimento e publicar notícias de tecnologia.
 
-Criar: Qualquer utilizador logado pode criar Equipas e Notícias.
+O sistema utiliza o `json-server` como back-end simulado para persistir os dados e `localStorage`/`sessionStorage` para a autenticação de usuários.
 
-Moderar (Admin): O Administrador tem permissão para editar ou excluir qualquer conteúdo da plataforma.
+As principais funcionalidades de CRUD implementadas são:
 
-Editar: Utilizadores comuns podem editar apenas o conteúdo que criaram.
+* **CRUD de Equipes:**
+    * **Create:** Usuários logados podem criar novas equipes (com título, descrição, vagas, tecnologias, etc.) através de um formulário (`cadastro_equipe.html`).
+    * **Read:** Todas as equipes são listadas na `index.html` e em `equipes.html`. Usuários podem ver detalhes, membros e um chat em `equipe-chat.html`.
+    * **Update:** O dono da equipe pode editar as informações (`editar_equipe.html`).
+    * **Delete:** O dono da equipe pode excluir a equipe de dentro da página `equipe-chat.html`.
 
-Interatividade:
+* **CRUD de Notícias:**
+    * **Create:** Usuários logados podem publicar novas notícias/artigos (`cadastro_noticia.html`).
+    * **Read:** As notícias são exibidas em formato de card na `index.html` e os detalhes podem ser lidos em `noticia-detalhe.html`.
+    * **Update:** O autor pode editar suas notícias através do `dashboard.html`, que redireciona para `editar_noticia.html`.
+    * **Delete:** O autor pode excluir suas notícias diretamente do `dashboard.html`.
 
-Pesquisa Inteligente: Filtre equipas por nome ou tecnologia na Home Page.
+---
 
-Favoritos: Marque equipas como favoritas e aceda-as numa página exclusiva.
+## Implementação nesta etapa (TP7 - Apresentação Dinâmica)
 
-Chat de Equipa: Sistema de mensagens persistente (localStorage) exclusivo para cada equipa.
+Seguindo a proposta do trabalho, esta etapa focou em criar visualizações dinâmicas para os dados existentes. A principal implementação foi uma página de estatísticas, além de melhorias visuais na apresentação dos dados na página inicial.
 
-Visualização de Dados:
+### 1. Página de Estatísticas com Chart.js
 
-Dashboard Pessoal: Painel para gerir as suas criações.
+Foi criada a página `estatisticas.html`
 
-Estatísticas: Gráficos dinâmicos (Chart.js) mostrando a distribuição de notícias por categoria.
+* O script `js/stats.js` busca (`fetch`) todos os dados do endpoint `/noticias` da API.
+* Os dados são processados em tempo real para agrupar as notícias por categoria e contar a quantidade de posts em cada uma.
+* Utilizando a biblioteca **Chart.js**, um gráfico de barras é gerado dinamicamente, mostrando visualmente a distribuição de conteúdo do portal.
+* O gráfico é responsivo e se atualiza automaticamente caso novas notícias sejam cadastradas (via CRUD) e a página recarregada.
 
-UX/UI (Experiência do Utilizador):
+---
 
-Layout totalmente responsivo (Mobile/Desktop).
+## Print da tela com a implementação
 
-Modo Escuro (Dark Theme) nativo.
+Abaixo estão os *prints* da nova página de estatísticas em funcionamento, conforme solicitado.
 
-Scroll Inteligente: Suporte a gestos de trackpad/touch para arrastar listas horizontais e verticais.
+**Print 1: Gráfico de Notícias por Categoria (Chart.js)**
+<img width="1365" height="660" alt="Estatisticas" src="https://github.com/user-attachments/assets/74d93a5d-226e-4d67-b2eb-f8f8f209efc4" />
+<img width="1365" height="659" alt="Cadastrandonovanoticia" src="https://github.com/user-attachments/assets/2ffb14cf-f9ad-476e-8780-9480b98e81bd" />
 
-🛠️ Tecnologias Utilizadas
 
-Front-End:
+**Print 2: Gráfico Atualizado após CRUD**
+<img width="1365" height="655" alt="novanoticia-teste" src="https://github.com/user-attachments/assets/637a8e67-a206-413d-b5da-b19fb69249ee" />
 
-HTML5 Semântico
-
-CSS3 (com Tailwind CSS via CDN para estilização rápida)
-
-JavaScript (ES6+ - Async/Await, Fetch API)
-
-Chart.js (Para gráficos estatísticos)
-
-FontAwesome (Para ícones)
-
-Back-End (Simulado):
-
-JSON Server (Simulação de API RESTful completa)
-
-Node.js (Ambiente de execução)
-
-📦 Pré-requisitos e Instalação
-
-Para rodar este projeto, precisa de ter o Node.js instalado no seu computador.
-
-Clone ou Baixe este repositório/pasta.
-
-Abra o terminal na raiz do projeto.
-
-Instale as dependências (JSON Server):
-
-npm install
-
-
-▶️ Como Executar
-
-Inicie o servidor backend simulado:
-
-npm start
-
-
-Este comando irá iniciar o JSON Server na porta 3000 a observar o ficheiro db/db.json.
-
-Abra o ficheiro public/index.html no seu navegador de preferência.
-
-Dica: Se usar VS Code, recomendo usar a extensão "Live Server" na pasta public para uma melhor experiência.
-
-🔑 Acesso para Testes
-
-O projeto já vem com utilizadores pré-configurados no db.json para facilitar a avaliação:
-
-1. Conta de Administrador (Super User)
-
-Tem acesso total: pode apagar e editar qualquer equipa ou notícia.
-
-Email: pedro3soares@gmail.com
-
-Senha: 123
-
-2. Conta de Visitante (Utilizador Comum)
-
-Acesso padrão: pode criar itens e gerir apenas os seus próprios dados.
-
-Email: visitante@teste.com
-
-Senha: 123
-
-Nota: Na página "Sobre", existe um botão "Testar Aplicação" que permite fazer login automático nessas contas sem precisar digitar a senha.
-
-📂 Estrutura de Pastas
-
-/
-├── db/
-│   └── db.json          # Base de dados (Utilizadores, Equipas, Notícias, Favoritos)
-├── public/              # Ficheiros do Front-End (Site)
-│   ├── css/             # Folhas de estilo
-│   ├── js/              # Scripts e Lógica (App, Auth, Dashboard, etc.)
-│   ├── index.html       # Página Principal
-│   └── ... (outras páginas HTML)
-├── package.json         # Configuração do projeto e scripts npm
-└── README.md            # Documentação do Projeto
-
-
-👨‍💻 Autor
-
-Pedro Dias Soares
-
-Curso: Ciência de Dados e Inteligência Artificial
-
-Instituição: Pontifícia Universidade Católica de Minas Gerais (PUC Minas)
-
-Disciplina: Desenvolvimento de Interfaces Web
