@@ -1,17 +1,23 @@
 {
-
-  "name": "template-diw-20251-semana-12",
+  "name": "organize-tp2",
   "version": "1.0.0",
-  "description": "Nesta atividade, você irá completar o projeto anterior permitindo cadastrar e alterar dados da entidade principal do do seu projeto a partir da estrutura criada na etapa anterior com o JSONServer. Para isso, crie uma **página de cadastro (cadastro_[ENTIDADE].html)**, que deve mostrar um formulário para cadastrar a entidade principal do projeto. OBS: Troque [ENTIDADE] pelo nome da sua entidade principal.",
-  "main": "index.js",
+  "description": "TP2 - Desenvolvimento de Interface Web. Hub de colaboração para desenvolvedores com autenticação, CRUD de equipes e notícias, favoritos e visualizações avançadas.",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "json-server --watch ./db/db.json"
+    "start": "node server.js",
+    "dev": "json-server --watch ./db/db.json"
   },
   "dependencies": {
     "json-server": "^0.17.0"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "web",
+    "desenvolvimento",
+    "tp2",
+    "organize",
+    "equipes"
+  ],
+  "author": "Pedro Dias Soares",
   "license": "ISC"
 }

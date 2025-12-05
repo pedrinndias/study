@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="text-xs font-bold text-white px-2 py-1 rounded ${vagasClasse}">
                                 ${vagasTexto}
                             </span>
-                            <a href="equipe-chat.html?id=${card.id}" class="text-blue-400 text-sm hover:underline">
+                            <a href="detalhes.html?id=${card.id}" class="text-blue-400 text-sm hover:underline">
                                 Ver
                             </a>
                         </div>
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="text-sm font-bold text-white px-3 py-1 rounded ${vagasClasse}">
                                 ${vagasTexto}
                             </span>
-                            <a href="equipe-chat.html?id=${card.id}" class="bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                            <a href="detalhes.html?id=${card.id}" class="bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">
                                 Ver Detalhes
                             </a>
                         </div>

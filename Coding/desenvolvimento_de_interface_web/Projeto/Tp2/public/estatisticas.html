@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossas Equipes | Organize</title>
+    <title>Estatísticas | Organize</title>
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,6 @@
             <div class="text-2xl font-bold text-white">
                 <a href="index.html"><i class="fas fa-sitemap mr-2 text-blue-400"></i>Organize</a>
             </div>
-
             <div id="central-nav-links" class="hidden md:flex items-center space-x-6">
                 </div>
             <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none mr-4">
@@ -32,13 +31,22 @@
 
     <main class="container mx-auto px-6 py-12">
         <div class="text-left mb-10">
-            <h1 class="text-4xl font-bold text-white">Nossas Equipes Ativas</h1>
-            <p class="text-gray-400 mt-2">Encontre uma equipe, explore os desafios e comece a colaborar.</p>
+            <h1 class="text-4xl font-bold text-white">Estatísticas do Portal</h1>
+            <p class="text-gray-400 mt-2">Visualização dinâmica dos dados da plataforma.</p>
         </div>
-        <div id="equipes-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="bg-gray-800 p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-white mb-6">Notícias por Categoria</h2>
+            <div classa="w-full">
+                <canvas id="noticiasPorCategoriaChart"></canvas>
             </div>
+        </div>
     </main>
-    <script src="js/app.js" defer></script>
-    <script src="js/auth.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="assets/scripts/auth.js"></script>
+    
+    <script src="assets/scripts/stats.js"></script>
 </body>
 </html>
