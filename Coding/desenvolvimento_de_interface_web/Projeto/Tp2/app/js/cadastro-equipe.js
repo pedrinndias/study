@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentUser = JSON.parse(sessionStorage.getItem('organize_currentUser'));
 
     form.addEventListener('submit', async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
 
         const titulo = document.getElementById('titulo').value;
         const descricao = document.getElementById('descricao').value;
@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const imagem = document.getElementById('imagem').value;
         const responsavel = document.getElementById('responsavel').value;
         const vagas = parseInt(document.getElementById('vagas').value, 10);
-        
+
         const tecnologias = document.getElementById('tecnologias').value
-            .split(',') 
-            .map(tech => tech.trim()) 
-            .filter(tech => tech.length > 0); 
+            .split(',')
+            .map(tech => tech.trim())
+            .filter(tech => tech.length > 0);
 
         const novaEquipe = {
             titulo: titulo,
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagem: imagem,
             conteudo: conteudo,
             responsavel: responsavel,
-            data_inicio: new Date().toISOString().split('T')[0], 
+            data_inicio: new Date().toISOString().split('T')[0],
             tecnologias: tecnologias,
             vagas: vagas,
             membros: [
@@ -36,18 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const response = await fetch(`${API_URL}/equipes`, {
-                method: 'POST', 
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(novaEquipe), 
+                body: JSON.stringify(novaEquipe),
             });
 
             if (response.ok) {
                 feedbackMessage.innerHTML = `<p class="text-green-400">Equipe "${titulo}" criada com sucesso!</p>`;
-                form.reset(); 
+                form.reset();
                 setTimeout(() => {
-                    window.location.href = 'equipes.html'; 
+                    window.location.href = 'equipes.html';
                 }, 2000);
             } else {
                 throw new Error('Falha ao criar equipe. O servidor respondeu com um erro.');

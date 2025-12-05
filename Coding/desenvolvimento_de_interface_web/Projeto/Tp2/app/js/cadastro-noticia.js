@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form-cadastro-noticia');
     const feedbackMessage = document.getElementById('feedback-message');
     const API_URL = 'http://localhost:3000';
-    
+
     const currentUser = JSON.parse(sessionStorage.getItem('organize_currentUser'));
 
     form.addEventListener('submit', async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
 
         const titulo = document.getElementById('titulo').value;
         const categoria = document.getElementById('categoria').value;
@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`${API_URL}/noticias`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(novaNoticia), 
+                body: JSON.stringify(novaNoticia),
             });
 
             if (response.ok) {
                 feedbackMessage.innerHTML = `<p class="text-green-400">Notícia "${titulo}" publicada com sucesso!</p>`;
-                form.reset(); 
+                form.reset();
                 setTimeout(() => { window.location.href = 'index.html'; }, 2000);
             } else {
                 throw new Error('Falha ao criar notícia.');

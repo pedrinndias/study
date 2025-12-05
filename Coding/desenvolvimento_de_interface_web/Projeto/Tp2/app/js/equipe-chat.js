@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentUser) {
                 chatAreaEl.style.display = 'block';
                 loginPromptEl.style.display = 'none';
-                loadMessages(); 
+                loadMessages();
 
                 if (adminActionsEl) {
                     adminActionsEl.style.display = 'block';
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 chatAreaEl.style.display = 'none';
                 loginPromptEl.style.display = 'block';
-                displayLoginPromptMessage(); 
+                displayLoginPromptMessage();
 
                 if (adminActionsEl) {
                     adminActionsEl.style.display = 'none';
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             messages.forEach(msg => {
                 appendMessage(msg);
             });
-            chatWindowEl.scrollTop = chatWindowEl.scrollHeight; 
+            chatWindowEl.scrollTop = chatWindowEl.scrollHeight;
         }
 
         function appendMessage(msg) {
@@ -164,12 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         async function handleDeleteEquipe() {
         if (!confirm(`Tem certeza que deseja excluir a equipe "${teamTitleEl.textContent}"?\n\nEsta ação não pode ser desfeita.`)) {
-            return; 
+            return;
         }
 
         try {
             const response = await fetch(`${API_URL}/equipes/${teamId}`, {
-                method: 'DELETE' 
+                method: 'DELETE'
             });
 
             if (response.ok) {
@@ -189,15 +189,15 @@ async function loadGithubCommits(repoUrl) {
     const commitListEl = document.getElementById('github-commits-list');
     try {
         const response = await fetch(`https://api.github.com/repos/${repoUrl}/commits?per_page=5`);
-        
+
         if (!response.ok) {
             throw new Error(`Erro do GitHub: ${response.statusText}`);
         }
-        
+
         const commits = await response.json();
-        
-        commitListEl.innerHTML = ''; 
-        
+
+        commitListEl.innerHTML = '';
+
         commits.forEach(item => {
             renderCommit(item, commitListEl);
         });
@@ -209,10 +209,10 @@ async function loadGithubCommits(repoUrl) {
 }
 
 function renderCommit(item, container) {
-    const message = item.commit.message.length > 50 
-        ? `${item.commit.message.substring(0, 50)}...` 
+    const message = item.commit.message.length > 50
+        ? `${item.commit.message.substring(0, 50)}...`
         : item.commit.message;
-        
+
     const commitDate = new Date(item.commit.author.date).toLocaleDateString('pt-BR', {day: '2-digit', month: 'short'});
 
     const commitElement = `
@@ -227,7 +227,7 @@ function renderCommit(item, container) {
         </div>
     `;
     container.innerHTML += commitElement;
-}   
+}
 
         init();
 });

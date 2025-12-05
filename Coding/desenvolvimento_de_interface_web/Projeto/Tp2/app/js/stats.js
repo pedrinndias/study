@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
     const API_URL = 'http://localhost:3000';
 
     async function carregarEstatisticasNoticias() {
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderizarGrafico(labels, data) {
         const ctx = document.getElementById('noticiasPorCategoriaChart').getContext('2d');
-        
+
         new Chart(ctx, {
             type: 'bar',
             data: {

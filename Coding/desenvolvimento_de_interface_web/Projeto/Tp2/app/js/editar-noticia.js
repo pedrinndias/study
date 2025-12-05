@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('form-cadastro-noticia'); 
+    const form = document.getElementById('form-cadastro-noticia');
     const feedbackMessage = document.getElementById('feedback-message');
     const API_URL = 'http://localhost:3000';
 
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const noticiaId = params.get('id');
 
     if (!noticiaId) {
-        window.location.href = 'index.html'; 
+        window.location.href = 'index.html';
         return;
     }
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(`${API_URL}/noticias/${noticiaId}`);
             if (!response.ok) throw new Error('Notícia não encontrada.');
-            
+
             const noticia = await response.json();
 
             document.getElementById('titulo').value = noticia.titulo;
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const response = await fetch(`${API_URL}/noticias/${noticiaId}`, {
-                method: 'PATCH', 
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dadosAtualizados),
             });
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 feedbackMessage.innerHTML = `<p class="text-green-400">Notícia atualizada com sucesso!</p>`;
                 setTimeout(() => {
-                    window.location.href = `dashboard.html`; 
+                    window.location.href = `dashboard.html`;
                 }, 2000);
             } else {
                 throw new Error('Falha ao atualizar notícia.');
@@ -62,5 +62,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    carregarDadosNoticia(); 
+    carregarDadosNoticia();
 });

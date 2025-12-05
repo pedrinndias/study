@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('form-cadastro-equipe'); 
+    const form = document.getElementById('form-cadastro-equipe');
     const feedbackMessage = document.getElementById('feedback-message');
     const API_URL = 'http://localhost:3000';
 
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const teamId = params.get('id');
 
     if (!teamId) {
-        window.location.href = 'equipes.html'; 
+        window.location.href = 'equipes.html';
         return;
     }
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(`${API_URL}/equipes/${teamId}`);
             if (!response.ok) throw new Error('Equipe não encontrada.');
-            
+
             const equipe = await response.json();
 
             document.getElementById('titulo').value = equipe.titulo;
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('imagem').value = equipe.imagem;
             document.getElementById('responsavel').value = equipe.responsavel;
             document.getElementById('vagas').value = equipe.vagas;
-            document.getElementById('tecnologias').value = equipe.tecnologias.join(', '); 
+            document.getElementById('tecnologias').value = equipe.tecnologias.join(', ');
 
         } catch (error) {
             console.error('Erro ao carregar dados:', error);
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     form.addEventListener('submit', async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
 
         const tecnologias = document.getElementById('tecnologias').value
             .split(',')
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const response = await fetch(`${API_URL}/equipes/${teamId}`, {
-                method: 'PATCH', 
+                method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -73,5 +73,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    carregarDadosEquipe(); 
+    carregarDadosEquipe();
 });
