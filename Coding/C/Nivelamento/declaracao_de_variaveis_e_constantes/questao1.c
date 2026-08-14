@@ -1,5 +1,9 @@
+// Declare uma variável do tipo inteiro para armazenar a sua idade, atribua um valor a ela e imprima o valor na tela.
 #include<stdio.h>
 int main(){
-    printf("Hello World!");
+    int idade;
+    idade=20;
+    printf("Minha idade eh: %d", idade);
+
     return 0;
 }
