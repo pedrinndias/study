@@ -3,18 +3,25 @@
 #include<stdio.h>
 
 int fatorial(int num){
-	if(num > 0){
-		fatorial((num * (num - 1)));
+	if(num==0){
+		return 1;
 	}else{
-		return num;
+		if(num == 1){
+			return num;
+		}else{
+			return num*fatorial(num-1);
+		}
 	}
 }
 
+
 int main(){
 	int num;
-	printf("Escreva um numero:");
-	scanf("%d", &num);
-	printf("%d! = %d", num, fatorial(num));
+	do{
+		printf("Escreva um numero:");
+		scanf("%d", &num);
+		printf("%d! = %d\n", num, fatorial(num));
+	}while(num>=0);
 
 	return 0;
 }
