@@ -4,21 +4,21 @@
 
 ### C
 
-* [Declaração de variáveis e constantes](#exercícios-focados-em-declaração-de-variáveis-e-constantes-em-c)
+* [Declaração de variáveis e constantes](#exercícios-focados-em-declaração-de-variáveis-e-constantes-em-c) ✅ 
 
-* [Estrutura de repetição](#exercícios-focados-em-estrutura-de-repetição-while--do-while--for)
+* [Estrutura de repetição](#exercícios-focados-em-estrutura-de-repetição-while--do-while--for) ✅ 
 
-* [Estrutura de condição](#exercícios-focados-em-estruturas-condicionais-if-else--operador-ternario--switch-case)
+* [Estrutura de condição](#exercícios-focados-em-estruturas-condicionais-if-else--operador-ternario--switch-case) ✅ 
 
-* [Funções matemáticas](#exercícios-focados-em-funções-matemáticas-utilizando-a-biblioteca-mathh--em-c)
+* [Funções matemáticas](#exercícios-focados-em-funções-matemáticas-utilizando-a-biblioteca-mathh--em-c) ✅ 
 
-* [Modularização](#exercícios-focados-em-modularização-funções-e-procedimentos)
+* [Modularização](#exercícios-focados-em-modularização-funções-e-procedimentos) ✅ 
 
-* [Recursividade](#exercícios-focados-em-recursividade)
+* [Recursividade](#exercícios-focados-em-recursividade) ✅ 
 
-* [Vetores](#exercícios-focados-em-vetores)
+* [Vetores](#exercícios-focados-em-vetores) ✅ 
 
-* [Matrizes](#exercícios-focados-em-matrizes)
+* [Matrizes](#exercícios-focados-em-matrizes) ✅ 
 
 * [Strings](#exercícios-focados-em-strings)
 
@@ -26,7 +26,7 @@
 
 * [Funções](#exercícios-focados-em-funções)
 
-* [Alocação Dinâmica de Memória](#exercícios-focados-em-alocação-dinâmica-de-memória)
+* [Alocação Dinâmica de Memória](#exercícios-focados-em-alocação-dinâmica-de-memória) ✅ 
 
 * [Arquivos](#exercícios-focados-em-recursividade)
 
