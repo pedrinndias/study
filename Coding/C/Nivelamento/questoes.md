@@ -20,7 +20,7 @@
 
 * [Matrizes](#exercícios-focados-em-matrizes) ✅ 
 
-* [Strings](#exercícios-focados-em-strings)
+* [Strings](#exercícios-focados-em-strings) ✅ 
 
 * [Ponteiros](#exercícios-focados-em-ponteiros)
 
