@@ -22,13 +22,13 @@
 
 * [Strings](#exercícios-focados-em-strings) ✅ 
 
-* [Ponteiros](#exercícios-focados-em-ponteiros)
+* [Ponteiros](#exercícios-focados-em-ponteiros) ✅    
 
 * [Funções](#exercícios-focados-em-funções)
 
 * [Alocação Dinâmica de Memória](#exercícios-focados-em-alocação-dinâmica-de-memória) ✅ 
 
-* [Arquivos](#exercícios-focados-em-recursividade)
+* [Arquivos](#exercícios-focados-em-recursividade) ⏱️
 
 * [Structs](#exercícios-focados-em-structs)
 
