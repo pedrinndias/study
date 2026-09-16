@@ -30,7 +30,7 @@
 
 * [Arquivos](#exercícios-focados-em-recursividade) ⏱️
 
-* [Structs](#exercícios-focados-em-structs)
+* [Structs](#exercícios-focados-em-structs) ✅ 
 
 ---
 
